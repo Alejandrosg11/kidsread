@@ -26,7 +26,11 @@
 
 .fondo {
   background-color:  #00B3EA;
+  background-image: url('./light-blue-wallpapers-hd-resolution-For-Desktop-Wallpaper.jpg');
   font-family: kids;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
 }
 
 

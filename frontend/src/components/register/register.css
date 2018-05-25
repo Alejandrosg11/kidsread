@@ -1,0 +1,15 @@
+.auth{
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+    justify-content:space-between;
+    padding: 20px;
+}
+
+.auth section {
+    padding:100px;
+}
+
+.back{
+    background-image: url("../../logo.svg")
+}
