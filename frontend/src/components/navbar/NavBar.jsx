@@ -18,6 +18,7 @@ import {
   import faUserCircle from '@fortawesome/fontawesome-free-solid/faUserCircle'
   import faBars from '@fortawesome/fontawesome-free-solid/faBars'
   import { Link } from 'react-router-dom'
+  
 
 
   class NavBar extends React.Component {

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import {Switch, Route} from 'react-router-dom';
 import NavBar from '../../components/navbar/NavBar';
 import './library.css'
-import { Card, Button, CardTitle, CardText } from 'reactstrap';
+import { Card, CardTitle, CardText } from 'reactstrap';
 
 
 class Library extends Component {

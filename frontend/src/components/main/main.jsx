@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Switch, Route} from 'react-router-dom';
 import NavBar from '../../components/navbar/NavBar';
 import Carousel from '../../components/carousel/carousel';
 import BookList from '../../components/books/BookList';

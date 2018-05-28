@@ -1,4 +1,8 @@
+import createHistory from 'history/createBrowserHistory';
+
+
 const baseUrl = 'http://localhost:3000';
+
 
 export function getBooks() {
     return fetch(baseUrl + '/books')
@@ -39,7 +43,8 @@ export function login(userData){
         return res.json();
     })
     .then(user=>{
-        //localStorage.setItem('user', JSON.stringify(user))
+        localStorage.setItem('user', JSON.stringify(user))
+        console.log(user)
         return user;
     });
 }
@@ -77,7 +82,7 @@ export function logout(userData){
         return res.json();
     })
     .then(user=>{
-        //localStorage.setItem('user', JSON.stringify(user))
+        localStorage.removeItem('user', JSON.stringify(user))
         return user;
     });
 }

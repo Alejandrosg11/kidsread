@@ -37,9 +37,6 @@ class BookList extends Component {
         selection();
         selection();
         selection();
-        selection();
-        selection();
-
 
         console.log(lists);        
         console.log(lists.length);
