@@ -7,6 +7,7 @@ export function getBooks() {
 }
 
 export function signup(userData){
+    console.log(userData);
     return fetch(baseUrl + '/signup', {
         method:'post',
         headers:{

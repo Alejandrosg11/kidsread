@@ -17,6 +17,8 @@ import {
   import faBookOpen from '@fortawesome/fontawesome-free-solid/faBookOpen'
   import faUserCircle from '@fortawesome/fontawesome-free-solid/faUserCircle'
   import faBars from '@fortawesome/fontawesome-free-solid/faBars'
+  import { Link } from 'react-router-dom'
+
 
   class NavBar extends React.Component {
     constructor(props) {
@@ -44,10 +46,10 @@ import {
                     <NavLink href="/"><FontAwesomeIcon className="iconos" icon={faSearch} /><br/><div className="white">Browse</div></NavLink>
                   </NavItem>
                   <NavItem className="menu">
-                    <NavLink href="/"><FontAwesomeIcon className="iconos" icon={faBookOpen} /><br/><div className="white">Library</div></NavLink>
+                    <NavLink href="/library"><FontAwesomeIcon className="iconos" icon={faBookOpen} /><br/><div className="white">Library</div></NavLink>
                   </NavItem>
                   <NavItem className="menu">
-                    <NavLink href="/"><FontAwesomeIcon className="iconos" icon={faUserCircle} /><br/><div className="white">Profile</div></NavLink>
+                    <NavLink href="/profile"><FontAwesomeIcon className="iconos" icon={faUserCircle} /><br/><div className="white">Profile</div></NavLink>
                   </NavItem>
                   <UncontrolledDropdown nav inNavbar className="menu">
                     <DropdownToggle nav caret>
@@ -62,7 +64,7 @@ import {
                     </DropdownItem>
                     <DropdownItem divider />
                     <DropdownItem>
-                    Logout
+                    <Link to="/register">Logout</Link>
                     </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>

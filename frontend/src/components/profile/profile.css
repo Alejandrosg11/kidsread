@@ -1,0 +1,28 @@
+.perfil{
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+    justify-content:space-between;
+    margin-top: 50px;
+}
+
+.tarjeta{
+    width: 70%;
+    height: 100vh;
+}
+
+.black{
+    color: #29333d;
+}
+
+.bar{
+    width: 50%;
+}
+
+.columnas {
+    padding: 35px;
+}
+
+.avatar {
+    width: 20%;
+}

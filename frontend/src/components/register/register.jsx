@@ -11,13 +11,23 @@ class Register extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          modal: false,
           newUser: {}
         };
     
         this.toggle = this.toggle.bind(this);
       }
-    
+
+      state = {
+        newUser:{}
+
+    }
+
+    componentWillMount(){
+        if(localStorage.getItem('user')){
+                this.props.history.push('/');
+        }
+    }
+
       toggle() {
         this.setState({
           modal: !this.state.modal
@@ -32,7 +42,9 @@ class Register extends React.Component {
         this.setState({newUser});
     }
 
-    sendUser = () => {
+    sendUser = (e) => {
+        e.preventDefault()
+        console.log(this.state.newUser)
         signup(this.state.newUser)
         .then(user=>{
             this.props.history.push('/')
@@ -40,9 +52,11 @@ class Register extends React.Component {
         .catch(e=>console.log(e))
     }
 
-    loginUser = () => {
+    loginUser = (e) => {
+        e.preventDefault()
         login(this.state.newUser)
         .then(user=>{
+            console.log (this.props.history)            
             this.props.history.push('/');
         })
         .catch(e=>console.log(e));
@@ -61,7 +75,7 @@ class Register extends React.Component {
               <Card body>
                 <CardTitle>Already a Member?</CardTitle>
                 <CardText>Log in to keep reading the new books that we have for you!</CardText>
-                <Form >                   
+                <Form onSubmit={this.loginUser}>                   
                             <InputGroup size="lg">
                                 <InputGroupAddon addonType="prepend">@</InputGroupAddon>
                                 <Input onChange={this.onChange} type="email" name="email" placeholder="e-mail" /><br/>
@@ -69,7 +83,7 @@ class Register extends React.Component {
                             <InputGroup size="lg">
                                 <Input onChange={this.onChange} type="password" name="password" placeholder="password" /><br/>
                             </InputGroup>   <br/>                     
-                            <Button onClick={this.loginUser} color="success" type="Submit">Login</Button>
+                            <Button color="success" type="Submit">Login</Button>
                     </Form>     <br/>
                 
 
@@ -79,28 +93,26 @@ class Register extends React.Component {
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader toggle={this.toggle}>Signup</ModalHeader>
                     <ModalBody>
-                        <Form >
+                        <Form onSubmit={this.sendUser}>
                             <InputGroup size="lg">
-                                <Input type="text" name="name" placeholder="Name" /><br/>
+                                <Input onChange={this.onChange} type="text" name="name" placeholder="Name" /><br/>
                             </InputGroup>  <br/>                      
                             <InputGroup size="lg">
                                 <InputGroupAddon addonType="prepend">@</InputGroupAddon>
-                                <Input type="email" name="email" placeholder="e-mail" /><br/>
+                                <Input onChange={this.onChange} type="email" name="email" placeholder="e-mail" /><br/>
                             </InputGroup><br/>
                             <InputGroup size="lg">
-                                <Input type="password" name="password" placeholder="password" /><br/>
+                                <Input onChange={this.onChange} type="password" name="password" placeholder="password" /><br/>
                             </InputGroup>   <br/>                     
                             <InputGroup size="lg">
-                                <Input type="Number" name="age" placeholder="Age" /><br/>
-                            </InputGroup><br/>
-                            <Button color="success" type="Submit" onClick={this.toggle}>Signup</Button>{' '}
-                        </Form>                        
+                                <Input onChange={this.onChange} type="Number" name="age" placeholder="Age" /><br/>
+                            </InputGroup><br/>   
+                            <Button onClick={this.toggle} color="success" type="Submit" >Signup</Button>
+                        </Form>
                         </ModalBody>
                     <ModalFooter>
-                        
                         <Button color="danger" onClick={this.toggle}>Cancel</Button>
                     </ModalFooter>
-                    
                 </Modal>    
               </Card>
             </Col>
@@ -111,4 +123,4 @@ class Register extends React.Component {
       }
     }
 
-  export default Register
+  export default Register;

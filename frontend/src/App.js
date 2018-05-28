@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
-import NavBar from './components/navbar/NavBar';
-import Carousel from './components/carousel/carousel';
-import BookList from './components/books/BookList';
-import Register from './components/register/register';
-import RegisterBackground from './components/register/registerBackground';
+import {Routes} from "./Routes";
 
 
+
+class App extends Component {
+
+  render() {
+
+    return (
+      <div className="fondo">
+      <Routes/>
+      </div>
+    );
+  }
+}
+
+export default App;
+
+/*
 class App extends Component {
 
   constructor(props) {
@@ -75,4 +87,4 @@ function LogoutButton(props) {
   );
 }
 
-export default App;
+export default App;*/

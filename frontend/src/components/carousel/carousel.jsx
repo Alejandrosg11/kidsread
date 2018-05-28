@@ -20,7 +20,7 @@ class Carousel extends React.Component {
             <div>
           <Slider {...settings} className="carousel">
             <div>
-              <h3> <img src="./assets/carousel01.png" alt=""/> </h3>
+               <img src="./assets/carousel01.png" alt=""/> 
             </div>
             <div>
               <h3><img src="./assets/carousel02.png" alt=""/></h3>

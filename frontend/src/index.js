@@ -5,7 +5,11 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import 'bootstrap/dist/css/bootstrap.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import {BrowserRouter} from 'react-router-dom';
+
+const WithRouter = () => <BrowserRouter><App /></BrowserRouter>;
 
 
-ReactDOM.render(<MuiThemeProvider><App /></MuiThemeProvider>, document.getElementById('root'));
+
+ReactDOM.render(<WithRouter/>, document.getElementById('root'));
 registerServiceWorker();

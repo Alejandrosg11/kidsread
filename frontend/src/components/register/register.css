@@ -4,12 +4,13 @@
     flex-direction:column;
     justify-content:space-between;
     padding: 20px;
+    height: 100vh;
 }
 
 .auth section {
-    padding:100px;
+    padding:90px;
 }
 
 .back{
-    background-image: url("../../logo.svg")
+    background-image: url("../../logo.svg");
 }

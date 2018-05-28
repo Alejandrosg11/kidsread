@@ -1,0 +1,26 @@
+.library{
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+    justify-content:space-between;
+    margin-top: 50px;
+}
+
+div{
+    color: white;
+}
+
+h1{
+    padding: 40px;
+}
+
+h3{
+    margin-left: 80px;
+}
+
+.tarjetaLib{
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+    text-align: center;    
+}
