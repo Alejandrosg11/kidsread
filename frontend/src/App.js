@@ -1,16 +1,28 @@
 import React, { Component } from 'react';
 import './App.css';
 import {Routes} from "./Routes";
+import Register from './components/register/register';
+import Main from './components/main/main'
+
 
 
 
 class App extends Component {
 
   render() {
-
+    
+    let auth = () => {
+      if(!localStorage.getItem('user')){
+        return <Register/>
+      } else {
+        return <Routes/>
+      }
+    }
+    auth();
     return (
       <div className="fondo">
-      <Routes/>
+      {auth()}
+
       </div>
     );
   }

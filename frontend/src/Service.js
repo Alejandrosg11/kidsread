@@ -74,15 +74,15 @@ export function logout(userData){
         headers:{
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(userData),
         credentials: 'include'
     })
     .then(res=>{
+        localStorage.removeItem('user')
         if(!res.ok) return Promise.reject(res);
         return res.json();
     })
     .then(user=>{
-        localStorage.removeItem('user', JSON.stringify(user))
+        
         return user;
     });
 }

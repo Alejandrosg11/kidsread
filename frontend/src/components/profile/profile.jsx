@@ -23,11 +23,11 @@ class Profile extends Component {
                 <CardTitle className="black"><h2>{userInfo.name}</h2></CardTitle>
                 <CardText className="black"><h5>Level {userInfo.level}</h5></CardText>
                 <CardText className="black"><h5>Age {userInfo.age}</h5></CardText>
-                <Progress className="bar" animated color="info" value={50} />
+                <Progress className="bar" animated color="info" value={30} />
             </div></Col>
             </Row>
             <hr/>
-            <h2 className="black">Recently Read Books...</h2>
+            <h2 className="black">Achievements...</h2>
             </Card>
 
         </section>

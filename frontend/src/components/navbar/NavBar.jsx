@@ -6,35 +6,55 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
+  Form,
   NavItem,
+  Button,
   NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem } from 'reactstrap';
-  import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-  import faSearch from '@fortawesome/fontawesome-free-solid/faSearch'
-  import faBookOpen from '@fortawesome/fontawesome-free-solid/faBookOpen'
-  import faUserCircle from '@fortawesome/fontawesome-free-solid/faUserCircle'
-  import faBars from '@fortawesome/fontawesome-free-solid/faBars'
-  import { Link } from 'react-router-dom'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faSearch from '@fortawesome/fontawesome-free-solid/faSearch';
+import faBookOpen from '@fortawesome/fontawesome-free-solid/faBookOpen';
+import faUserCircle from '@fortawesome/fontawesome-free-solid/faUserCircle';
+import faBars from '@fortawesome/fontawesome-free-solid/faBars';
+import { Link } from 'react-router-dom';
+import { logout } from '../../Service';
   
 
 
   class NavBar extends React.Component {
     constructor(props) {
         super(props);
-    
         this.toggle = this.toggle.bind(this);
         this.state = {
-          isOpen: false
+          isOpen: false,
+          newUser: {}
         };
       }
+
       toggle() {
         this.setState({
           isOpen: !this.state.isOpen
         });
       }
+
+      onChange = (e) =>{
+        const field = e.target.name;
+        const value = e.target.value;
+        const {newUser} = this.state;
+        newUser[field] = value;
+        this.setState({newUser});
+    }
+
+    logoutUser = (e) => {
+      e.preventDefault()
+      logout(this.state.newUser)
+      .then(window.location.reload())
+      .catch(window.location.reload());
+  };
+
       render() {
         return (
           <div >
@@ -65,7 +85,9 @@ import {
                     </DropdownItem>
                     <DropdownItem divider />
                     <DropdownItem>
-                    <Link to="/register">Logout</Link>
+                    <Form onSubmit={this.logoutUser}>                   
+                      <Button type="submit"> Logout </Button>
+                    </Form >
                     </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
