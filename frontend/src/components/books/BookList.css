@@ -14,3 +14,9 @@ hr{
     width: 80%;
     background-color: aqua;
 }
+
+.botones{
+    display: flex;
+    justify-content:space-around;
+    align-items:flex-end;
+}

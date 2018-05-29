@@ -51,8 +51,15 @@ import { logout } from '../../Service';
     logoutUser = (e) => {
       e.preventDefault()
       logout(this.state.newUser)
-      .then(window.location.reload())
-      .catch(window.location.reload());
+      .then(user=>{
+        window.location.reload();
+          console.log (this.props.history)
+                    
+      })
+      .catch(e=>{
+        window.location.reload();
+        console.log(e)
+      });
   };
 
       render() {

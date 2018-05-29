@@ -1,7 +1,7 @@
 import createHistory from 'history/createBrowserHistory';
 
 
-const baseUrl = 'http://localhost:3000';
+const baseUrl = 'https://kidsreadback.herokuapp.com';
 
 
 export function getBooks() {
