@@ -19,7 +19,6 @@ import faSearch from '@fortawesome/fontawesome-free-solid/faSearch';
 import faBookOpen from '@fortawesome/fontawesome-free-solid/faBookOpen';
 import faUserCircle from '@fortawesome/fontawesome-free-solid/faUserCircle';
 import faBars from '@fortawesome/fontawesome-free-solid/faBars';
-import { Link } from 'react-router-dom';
 import { logout } from '../../Service';
   
 

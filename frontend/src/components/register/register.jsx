@@ -1,7 +1,7 @@
 import React from 'react';
 import './register.css'
 import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
-import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody } from 'reactstrap';
 import { InputGroup, InputGroupAddon, Input, Form } from 'reactstrap';
 import {login, signup} from '../../Service'
 

@@ -1,4 +1,3 @@
-import createHistory from 'history/createBrowserHistory';
 
 
 const baseUrl = 'https://kidsreadback.herokuapp.com';
@@ -51,15 +50,11 @@ export function login(userData){
 
 export function profile(userData){
     return fetch(baseUrl + '/profile', {
-        method:'post',
-        headers:{
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(userData),
+        method:'get',
         credentials: 'include'
     })
     .then(res=>{
-        if(!res.ok) return Promise.reject(res);
+        if(!res.ok) return res;
         return res.json();
     })
     .then(user=>{
